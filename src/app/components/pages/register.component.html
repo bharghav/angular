@@ -1,0 +1,56 @@
+
+<div class="container">
+    <h1>Register</h1>
+  <div class="row">
+      <div class="col-md-2">
+        &nbsp;
+      </div>
+      <div class="col-md-10">
+          <form #userForm="ngForm" (ngSubmit) = "onSubmit(userForm.value)">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" #nameRef="ngModel" required class="form-control" ngModel>
+                <!--{{nameRef.className}} -->
+                <div [hidden]="nameRef.valid || nameRef.pristine"  class="alert alert-danger" >
+                    Please enter a name
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="text" name="email"  #emailRef="ngModel" required class="form-control" ngModel>
+                <div [hidden]="emailRef.valid || emailRef.pristine"  class="alert alert-danger" >
+                    Please enter a name
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" name="pnumber" #pnumberRef="ngModel" required class="form-control" ngModel>
+                <div [hidden]="pnumberRef.valid || pnumberRef.pristine"  class="alert alert-danger" >
+                  Please enter a name
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Gender</label>
+                <input type="radio" name="gender" value="male" #genderRef="ngModel" required class="form-group" ngModel>Male
+                <input type="radio" name="gender" value="female" #genderRef="ngModel" required class="form-group" ngModel>Female
+                <div [hidden]="genderRef.valid || genderRef.pristine"  class="alert alert-danger" >
+                    Please select a Gender
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Address</label>
+                <textarea rows="3" cols="10" name="Address" #addressRef="ngModel" required class="form-control" ngModel></textarea>
+                <div [hidden]="addressRef.valid || addressRef.pristine"  class="alert alert-danger" >
+                    Please enter a Address
+                </div>
+
+              </div>
+
+                <button type="submit" class="btn btn-primary" >Submit</button>
+
+            </form>
+        </div>
+  </div>
+
+  <br>
+</div>
